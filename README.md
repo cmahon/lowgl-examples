@@ -1,2 +1,2 @@
-# lowgl-examples
-Examples for the lowgl library
+Code from the [lowgl](http://www.learnopengl.com/) haddocks documentation with a few minor tweaks.
+

@@ -1,0 +1,97 @@
+Name:                     lowgl-examples
+Version:                  0.0.1
+Cabal-version:            >= 1.18
+Synopsis:                 TODO
+Description:              TODO
+Homepage:                 https://github.com/cmahon/lowgl-examples
+Package-url:              TODO
+Bug-reports:              https://github.com/cmahon/lowgl-examples/issues
+License:                  BSD3
+License-file:             LICENSE.txt
+Author:                   Chris Mahon
+Maintainer:               cnmahon@gmail.com
+Copyright:                2015 Chris Mahon <cnmahon@gmail.com>
+Category:                 TODO
+Build-type:               Simple
+Stability:                Experimental
+Tested-with:              GHC == 7.8.3
+Data-files:               blending.vert
+                          blending.frag
+                          framebuffer.vert
+                          framebuffer1.frag
+                          framebuffer2.frag
+                          logo.png
+                          shader.vert
+                          shader1.frag
+                          shader2.frag
+                          shader3.frag
+                          texture.vert
+                          texture.frag
+                          triangle.vert
+                          triangle.frag
+Data-dir:                 data
+
+Executable blending
+  main-is:                Blending.hs
+  hs-source-dirs:         executable
+  ghc-options:            -Wall -O2 -threaded -rtsopts
+  default-language:       Haskell2010
+  build-depends:          base,
+                          GLFW-b,
+                          linear,
+                          lowgl,
+                          monad-loops,
+                          stm,
+                          vector
+
+Executable framebuffer
+  main-is:                FrameBuffer.hs
+  hs-source-dirs:         executable
+  ghc-options:            -Wall -O2 -threaded -rtsopts
+  default-language:       Haskell2010
+  build-depends:          base,
+                          data-default,
+                          GLFW-b,
+                          linear,
+                          lowgl,
+                          monad-loops,
+                          vector
+
+Executable shader
+  main-is:                Shader.hs
+  hs-source-dirs:         executable
+  ghc-options:            -Wall -O2 -threaded -rtsopts
+  default-language:       Haskell2010
+  build-depends:          base,
+                          GLFW-b,
+                          linear,
+                          lowgl,
+                          monad-loops,
+                          vector
+
+Executable texture
+  main-is:                Texture.hs
+  hs-source-dirs:         executable
+  ghc-options:            -Wall -O2 -threaded -rtsopts
+  default-language:       Haskell2010
+  build-depends:          base,
+                          either,
+                          GLFW-b,
+                          linear,
+                          JuicyPixels,
+                          lowgl,
+                          monad-loops,
+                          vector
+
+Executable triangle
+  main-is:                Triangle.hs
+  hs-source-dirs:         executable
+  ghc-options:            -Wall -O2 -threaded -rtsopts
+  default-language:       Haskell2010
+  build-depends:          base,
+                          GLFW-b,
+                          lowgl,
+                          monad-loops,
+                          vector
+  
+
