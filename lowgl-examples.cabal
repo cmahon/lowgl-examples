@@ -6,11 +6,8 @@ Description:              TODO
 Homepage:                 https://github.com/cmahon/lowgl-examples
 Package-url:              TODO
 Bug-reports:              https://github.com/cmahon/lowgl-examples/issues
-License:                  BSD3
-License-file:             LICENSE.txt
 Author:                   Chris Mahon
 Maintainer:               cnmahon@gmail.com
-Copyright:                2015 Chris Mahon <cnmahon@gmail.com>
 Category:                 TODO
 Build-type:               Simple
 Stability:                Experimental
