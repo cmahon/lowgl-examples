@@ -26,19 +26,23 @@ main = do
     Just win -> do
       GLFW.makeContextCurrent (Just win)
 
-      -- CM
+      -- CM: for retina displays
       (w,h) <- GLFW.getFramebufferSize win
       setViewport $ Viewport 0 0 w h
       
       GLFW.swapInterval 1
-      (vao1, vao2, prog1, prog2, fbo, texture) <- setup
+      
+      -- CM: added w and h params
+      (vao1, vao2, prog1, prog2, fbo, texture) <- setup w h
+      
       whileM_ (not <$> GLFW.windowShouldClose win) $ do
         GLFW.pollEvents
         t <- (realToFrac . fromJust) <$> GLFW.getTime
         draw vao1 vao2 prog1 prog2 fbo texture t
         GLFW.swapBuffers win
 
-setup = do
+-- CM: added w and h params
+setup w h = do
   -- primary subject
   vao1 <- newVAO
   bindVAO vao1
@@ -78,7 +82,7 @@ setup = do
   -- create an FBO to render the primary scene on
   fbo <- newFBO
   bindFramebuffer fbo
-  texture <- newEmptyTexture2D 640 480 :: IO (Tex2D RGB)
+  texture <- newEmptyTexture2D w h :: IO (Tex2D RGB)
   bindTexture2D texture
   setTex2DFiltering Linear
   attachTex2D texture
